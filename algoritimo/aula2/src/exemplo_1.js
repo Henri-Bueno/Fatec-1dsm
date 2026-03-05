@@ -1,6 +1,9 @@
-idade = 55;
-idade2 = 18;
-if(idade < idade2){
+prompt = require("prompt-sync")();
+
+idadeString = prompt("Entre com sua idade: ");
+idade = parseInt(idadeString)
+
+if(idade < 18){
     console.log("De menor")
 }
 else{
