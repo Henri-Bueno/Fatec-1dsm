@@ -1,5 +1,7 @@
 function imprimir(a,b){
-for(; ____ <= _____; ______){
+for(; a <= b; a++){
 console.log( a );
 }
 }
+
+imprimir(5,10);
