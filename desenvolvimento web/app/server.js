@@ -29,3 +29,6 @@ app.get("/", function(_req,res){
     res.sendFile( path.join(pagesPath,"index.html") );
 });
 
+app.get("/login", function(_req,res){
+    res.sendFile( path.join(pagesPath,"login.html") );
+});
