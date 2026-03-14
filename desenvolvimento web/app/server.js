@@ -32,3 +32,7 @@ app.get("/", function(_req,res){
 app.get("/login", function(_req,res){
     res.sendFile( path.join(pagesPath,"login.html") );
 });
+
+app.get("/cadastro", function(_req,res){
+    res.sendFile( path.join(pagesPath,"cadastro.html") );
+});
