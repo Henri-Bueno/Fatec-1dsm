@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="py-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DSM | Login</title>
     <link rel="icon" href="https://www.cps.sp.gov.br/favicon.ico" />
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <title>DSM | Login</title>
 </head>
+
 <body>
-    <div>Tela de Login</div>
+    <main class="card">
+        <h1 class="tittle">Login</h1>
+        <form class="auth-form" action="#" method="post">
+            <label for="email">E-mail</label>
+            <input type="email" required id="email" />
+
+            <label for="senha">Senha</label>
+            <input type="password" required id="senha" />
+        </form>
+        <div class="actions">
+            <button class="btn-link">entrar</button>
+            <a class="btn-link" href="/cadastro">Ir para cadastro</a>
+            <a class="btn-link btn-secondary" href="/">Voltar</a>
+        </div>
+    </main>
 </body>
+
 </html>

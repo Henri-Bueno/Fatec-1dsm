@@ -53,6 +53,7 @@ body {
 }
 
 .actions{
+    margin-top: 1.25rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -60,7 +61,6 @@ body {
 }
 
 .btn-link{
-    display: inline-flex;
     padding: 0.7rem 1rem;
     background-color: rgb(2, 147, 243);
     color: antiquewhite;
@@ -68,5 +68,39 @@ body {
     font: inherit;
     font-size: 1rem;
     font-weight: 500;
-    border-radius: 8px;
+    border-radius: 0.5rem;
+}
+.btn-link:hover{
+    background-color: rgb(2, 147, 243, 0.8);
+}   
+
+.btn-secondary{
+    background-color: #4b5563;
+}
+.btn-secondary:hover{
+    background-color: #4b5563cc;
+}
+
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.auth-form label{
+    font-weight: 500;
+}
+
+.auth-form input{
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid #cbd5e1;
+    font: inherit;
+}
+
+.link{
+    color: rgb(2, 147, 243);   
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: auto;
 }
