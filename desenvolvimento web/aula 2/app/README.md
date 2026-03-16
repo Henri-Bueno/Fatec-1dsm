@@ -29,11 +29,6 @@ Uma aplicação web básica desenvolvida com Node.js e Express, oferecendo pági
    npm install
    ```
 
-3. Crie um arquivo `.env` na raiz do projeto e defina a porta:
-   ```
-   PORT=3000
-   ```
-
 ## Uso
 
 Para iniciar o servidor em modo de desenvolvimento (com watch):
@@ -63,7 +58,3 @@ app/
 │       └── 404.html
 └── .env               # Variáveis de ambiente (não incluído no repositório)
 ```
-
-## Licença
-
-Este projeto está licenciado sob a Licença ISC.
