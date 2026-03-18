@@ -25,6 +25,7 @@ body {
     padding: 2rem;
     width: 100%;
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    gap: 1rem;
 }
 
 .title{
@@ -38,4 +39,29 @@ body {
    border-radius: 0.5rem;
    border: 0.0625rem solid #cbd5e1;
    font: inherit;
+}
+
+.result{
+    min-height: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    background-color: yellow;
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+}
+
+.result.error{
+    background-color: #fef2f2;
+    color: #991b1b;
+}
+
+.result.loading{
+    background-color: #eff6ef;
+    color: #1b4ed8;
+}
+
+.result.sucess{
+    background-color: #f1fafc;
+    color: #0f172a;
+    border: 0.0625rem solid #cbd5e1;
 }
