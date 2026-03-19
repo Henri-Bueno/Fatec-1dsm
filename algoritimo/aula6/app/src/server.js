@@ -5,6 +5,8 @@ dotenv.config({
   path: path.resolve(__dirname, "..", ".env"),
 });
 
+const router = require("./routes/user.routes")
+
 const express = require("express");
 const app = express();
 
@@ -20,3 +22,5 @@ const assetsPath = path.join(publicPath, "assets");
 
 app.use(express.static(pagesPath));
 app.use("/assets", express.static(assetsPath))
+
+app.use("/users", router)
