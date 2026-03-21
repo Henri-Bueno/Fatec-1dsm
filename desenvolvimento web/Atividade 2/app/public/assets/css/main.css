@@ -45,7 +45,6 @@ body {
     min-height: 1.5rem;
     border-radius: 0.5rem;
     padding: 0.75rem;
-    background-color: yellow;
     font-size: 0.95rem;
     line-height: 1.4rem;
 }
@@ -60,8 +59,12 @@ body {
     color: #1b4ed8;
 }
 
-.result.sucess{
+.result.success{
     background-color: #f1fafc;
     color: #0f172a;
     border: 0.0625rem solid #cbd5e1;
+}
+
+.result p{
+    margin: 0.2rem 0;
 }
