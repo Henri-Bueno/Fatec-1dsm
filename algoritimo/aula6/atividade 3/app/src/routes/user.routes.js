@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { listUsers, createUser } = require("../database/users");
+const { listUsers, createUser, deleteUser } = require("../database/users");
 
 // cria um router
 const router = express.Router();
