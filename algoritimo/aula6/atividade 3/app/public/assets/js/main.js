@@ -50,8 +50,9 @@ function renderUsers(users) {
                 <td class="user-table-actions-cell" >
                     <button class="delete-user-button" onclick="deleteUser(${users[i].id_user})"> 
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M9 3h6l1 2h4v2H4V5h4l1-2zm1 6h2v8h-2V11zm4 0h2v8H8V11zm4 0h2v8h-2V11z"
-                            fill="currentColor">
+                     <path 
+                     d="M9 3h6l1 2h4v2H4V5h4l1-2zm1 6h2v8h-2V9zm4 0h2v8h-2V9zm-7 0h2v8H7V9z m1 12a2 2 0 0 1-2-2V8h12v11a2 2 0 0 1-2 2H8z"
+                        fill="currentColor">
                     </path>
                     </svg>
                     </button>
