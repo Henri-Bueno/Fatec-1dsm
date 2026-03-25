@@ -57,6 +57,7 @@ function renderUsers(users) {
                     </svg>
                     </button>
                 </td>
+                
             </tr>
         `;
         }
