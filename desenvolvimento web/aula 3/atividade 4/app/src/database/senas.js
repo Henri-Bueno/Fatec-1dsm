@@ -1,7 +1,7 @@
 const pool = require("./connection");
 
 async function listSenas() {
-  const sql = "SELECT * FROM senas ORDER BY id_sena DESC";
+  const sql = "SELECT * FROM senas ORDER BY id_senas DESC";
 
   const response = await pool.query(sql);
   return response;

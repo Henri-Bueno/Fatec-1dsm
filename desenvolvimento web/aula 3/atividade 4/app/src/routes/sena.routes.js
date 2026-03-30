@@ -5,14 +5,14 @@ const router = express.Router();
 router.get("/", async function(req, res){
     const response = await listSenas();
     const {rows} = response;
-    res.send(response.rows);
+    res.status(200).json(response.rows);
 });
 
 // curl -X POST http://localhost:3004/senas -H "Content-Type: application/json" -d "{\"nros\":\"1 2 3 4 5 6\"}"
 router.post("/", async function(req, res){
     const {nros} = req.body;
     const response = await createSena(nros);
-    res.send(response.rows[0]);
+    res.status(201).json(response.rows[0]);
 });
 
 module.exports = router;
