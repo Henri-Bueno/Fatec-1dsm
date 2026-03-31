@@ -11,22 +11,36 @@ async function loadSenas() {
     const response = await fetch("/senas")
     if (response.ok) {
         const senas = await response.json()
-        console.log(senas);
+        renderSenas(senas); // exibe os jogos carregados
     } else {
         showResult("Erro ao carregar jogos cadastrados.", "error");
     }
 }
 
-function renderSenas(senas) {
-    if (senas.length == 0) {
-        showResult("Nenhum jogo encontado.", "sucess");
-    } else {
-        for (let i = 0; i < senas.length; i++) {
-            const dezenas = senas[i].nros.split(" ")
-        }
+function RenderBalls(dezenas) {
+    let ballsHtml = "";
+    for (let i = 0; i < dezenas.length; i++) {
+        ballsHtml += `<span class="sena-ball">${dezenas[i]}</span>`;
     }
+    return ballsHtml;
 }
 
+function renderSenas(senas) {
+    if (senas.length === 0) {
+        showResult("Nenhum jogo encontrado.", "success");
+        senaListBody.innerHTML = "";
+        return;
+    }else{
+
+    let senaRow = "";
+    for (let i = 0; i < senas.length; i++) {
+        const dezenas = senas[i].nros.split(" ");
+        const balls = RenderBalls(dezenas);
+        senaRow += `<div class="sena-row-balls">${balls}</div>`;
+    }
+    senaListBody.innerHTML = senaRow;
+    }
+}
 async function createSena() {
     const nros = senainput.value.trim().replace(/\s+/g, " ");
     if (nros.split(" ").length == 6) {
