@@ -7,7 +7,7 @@ dotenv.config({
 
 const { Pool } = require("pg");
 let config;
-if (ProcessingInstruction.env.DATABASE_URL){
+if (process.env.DATABASE_URL){
   config = {
   connectionString: process.env.DATABASE_URL, 
 };
