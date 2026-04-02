@@ -1,0 +1,21 @@
+{
+  "name": "exercicios5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "um": "node ./src/exercicio_1",
+    "dois": "node ./src/exercicio_2",
+    "tres": "node ./src/exercicio_3",
+    "quatro": "node ./src/exercicio_4",
+    "cinco": "node ./src/exercicio_5",
+    "seis": "node ./src/exercicio_6",
+    "sete": "node ./src/exercicio_7",
+    "oito": "node ./src/exercicio_8",
+    "nove": "node ./src/exercicio_9",
+    "dez": "node ./src/exercicio_10"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

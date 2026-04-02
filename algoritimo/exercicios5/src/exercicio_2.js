@@ -1,0 +1,15 @@
+function converter(entrada){
+    let textos = entrada.split(";")
+ let obj = {
+    "lugradouro": textos[0].trim(),
+    "bairro": textos[1].trim(),
+    "municipio": textos[2].trim(),
+    "uf": textos[3].trim(),
+    "cep":textos[4].trim()
+ }
+    return obj
+}
+
+const endereco = "R. Faria Lima, 155; Jardim Santa Maria; Jacareí; SP; 12328-070";
+const resposta = converter(endereco);
+console.log(resposta);
