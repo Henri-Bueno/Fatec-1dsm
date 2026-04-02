@@ -3,8 +3,8 @@ const pool = require("./connection");
 async function listSenas() {
   const sql = "SELECT * FROM senas ORDER BY id_senas DESC";
 
-  const response = await pool.query(sql);
-  return response;
+  const {rows} = await pool.query(sql);
+  return rows;
 }
 
 async function createSena(nros) {
