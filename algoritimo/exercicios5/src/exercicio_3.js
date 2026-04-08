@@ -1,12 +1,9 @@
-function converter(entrada){
-    let textos = entrada.split(";")
- let obj =
-    "lugradouro": textos[0].trim(),
-    "bairro": textos[1].trim(),
-    "municipio": textos[2].trim(),
-    "uf": textos[3].trim(),
-    "cep":textos[4].trim()
- 
+function aleatorio(entrada){
+    let itens = []
+    for (i = 0; i < entrada; i++){
+        itens[i] =Math.floor(Math.random() * 100)
+}
+return itens
 }
 const nros = aleatorio(10);
 console.log(nros);

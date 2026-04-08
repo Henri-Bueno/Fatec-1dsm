@@ -1,4 +1,4 @@
-function converter(entrada){
+function formatar(entrada){
     let textos = entrada.split(";")
  let obj = {
     "lugradouro": textos[0].trim(),
@@ -11,5 +11,5 @@ function converter(entrada){
 }
 
 const endereco = "R. Faria Lima, 155; Jardim Santa Maria; Jacareí; SP; 12328-070";
-const resposta = converter(endereco);
+const resposta = formatar(endereco);
 console.log(resposta);
