@@ -13,7 +13,7 @@ async function createSena(nros) {
                 RETURNING *`;
   const values = [nros];
   const response = await pool.query(sql, values);
-  return response[0];
+  return response.rows[0];
 }
 
 module.exports = { listSenas, createSena };
