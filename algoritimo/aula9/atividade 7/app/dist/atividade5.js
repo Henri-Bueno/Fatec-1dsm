@@ -1,37 +1,70 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function cifrarMensagem(mensagem, deslocamento) {
-    const alfabeto = "abcdefghijklmnopqrstuvwxyzA";
-    let resultado = "";
-    for (let i = 0; i < mensagem.length; i++) {
-        const caractere = mensagem[i];
-        const posicao = alfabeto.indexOf(caractere);
-        if (posicao >= 0) {
-            const novaPosicao = (posicao + deslocamento) % 27;
-            resultado = resultado + alfabeto[novaPosicao];
+function adicionarTarefa(lista, descricao, prioridade) {
+    let novaTarefa = {
+        descricao: descricao,
+        prioridade: prioridade,
+        status: "pendente"
+    };
+    lista.push(novaTarefa);
+}
+function concluirTarefa(lista, indice) {
+    if (indice < 0 || indice >= lista.length) {
+        return false;
+    }
+    lista[indice].status = "concluída";
+    return true;
+}
+function listarTarefas(lista) {
+    if (lista.length == 0) {
+        console.log("Nenhuma tarefa cadastrada.");
+        return;
+    }
+    for (let i = 0; i < lista.length - 1; i++) {
+        console.log("Índice:", i);
+        console.log("Descrição:", lista[i].descricao);
+        console.log("Prioridade:", lista[i].prioridade);
+        console.log("Status:", lista[i].status);
+    }
+}
+function listarPendentes(lista) {
+    let encontrou = false;
+    for (const tarefa of lista) {
+        if (tarefa.status = "pendente") {
+            console.log(tarefa.descricao);
+            console.log(tarefa.prioridade);
+            encontrou = true;
         }
-        else {
-            resultado = resultado + caractere;
+    }
+    if (encontrou = false) {
+        console.log("Nenhuma tarefa pendente");
+    }
+}
+function buscarTarefa(lista, palavra) {
+    let resultado = [];
+    let palavraBuscada = palavra.toLowerCase();
+    for (const tarefa of lista) {
+        let descricaoMinuscula = tarefa.descricao.toLowerCase();
+        if (descricaoMinuscula.includes(palavraBuscada)) {
+            resultado.push(tarefa);
         }
     }
     return resultado;
 }
-function decifrarMensagem(mensagem, deslocamento) {
-    return cifrarMensagem(mensagem, 27 - deslocamento);
-}
-// caso de teste
-const mensagemOriginal = "ataque ao castelo";
-const deslocamento = 3;
-const mensagemCifrada = cifrarMensagem(mensagemOriginal, deslocamento);
-const mensagemDecifrada = decifrarMensagem(mensagemCifrada, deslocamento);
-console.log(`Mensagem original: ${mensagemOriginal}`);
-console.log(`Mensagem cifrada: ${mensagemCifrada}`);
-console.log(`Mensagem decifrada: ${mensagemDecifrada}`);
+// Casos de teste:
+const tarefas = [];
+adicionarTarefa(tarefas, "Estudar TypeScript", 5);
+adicionarTarefa(tarefas, "Resolver exercícios de algoritmos", 4);
+adicionarTarefa(tarefas, "Preparar aula de programação", 3);
+listarTarefas(tarefas);
+concluirTarefa(tarefas, 1);
 console.log("-----------------------------");
-const outraMensagem = "Arley typescript 123!";
-const outraCifrada = cifrarMensagem(outraMensagem, deslocamento);
-const outraDecifrada = decifrarMensagem(outraCifrada, deslocamento);
-console.log(`Mensagem original: ${outraMensagem}`);
-console.log(`Mensagem cifrada: ${outraCifrada}`);
-console.log(`Mensagem decifrada: ${outraDecifrada}`);
+listarPendentes(tarefas);
+console.log("-----------------------------");
+const resultadoBusca = buscarTarefa(tarefas, "TypeScript");
+console.log("Resultado da busca");
+console.log("-----------------------------");
+for (const tarefa of resultadoBusca) {
+    console.log(tarefa.descricao);
+}
 //# sourceMappingURL=atividade5.js.map

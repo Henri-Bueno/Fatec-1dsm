@@ -1,41 +1,62 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function adicionarPessoa(fila, nome) {
-    fila.push(nome);
+function inicializarHistorico() {
+    let historico = { paginas: [] };
+    return historico;
 }
-function atenderPessoa(fila) {
-    if (fila.length === 0) {
-        console.log("Não há pessoas na fila");
-        return null;
-    }
-    let pessoaAtendida = fila.shift();
-    return pessoaAtendida;
-}
-function listarFila(fila) {
-    if ((fila.length === 0)) {
-        console.log("Fila vazia");
+function historicoVazio(historico) {
+    if (historico.paginas.length == 0) {
+        return true;
     }
     else {
-        for (let i = 0; (i < fila.length); i++) {
-            console.log(i + 1, fila[i]);
-        }
+        return false;
     }
 }
-const filaAtendimento = [];
-adicionarPessoa(filaAtendimento, "Ana");
-adicionarPessoa(filaAtendimento, "Bruno");
-adicionarPessoa(filaAtendimento, "Carla");
-adicionarPessoa(filaAtendimento, "Diego");
-listarFila(filaAtendimento);
-console.log("-----------------------------");
-const primeiraPessoaAtendida = atenderPessoa(filaAtendimento);
-if (primeiraPessoaAtendida !== null) {
-    console.log(`Pessoa atendida: ${primeiraPessoaAtendida}`);
+function visitarPagina(historico, pagina) {
+    historico.paginas.push(pagina);
+    console.log(`Página visitada: ${pagina}`);
 }
-else {
-    console.log("Não há pessoas na fila para atendimento.");
+function voltarPagina(historico) {
+    if (historicoVazio(historico)) {
+        console.log("Nenhuma página no histórico.");
+        return null;
+    }
+    let paginaRemovida = historico.paginas.pop();
+    if (paginaRemovida) {
+        console.log(`Voltando da página: ${paginaRemovida}`);
+        return paginaRemovida;
+    }
+    return null;
 }
+function paginaAtual(historico) {
+    if (historicoVazio(historico)) {
+        return "Nenhuma página aberta";
+    }
+    return historico.paginas[historico.paginas.length - 1];
+}
+function listarHistorico(historico) {
+    if (historicoVazio(historico)) {
+        console.log("Histórico vazio");
+        return;
+    }
+    console.log("Histórico de navegação:");
+    for (let i = historico.paginas.length - 1; i >= 0; i--) {
+        console.log(historico.paginas[i]);
+    }
+}
+const historico = inicializarHistorico();
+visitarPagina(historico, "fatecjacarei.cps.sp.gov.br/");
+visitarPagina(historico, "www.cps.sp.gov.br/etecs/etec-conego-jose-bento");
+visitarPagina(historico, "siga.cps.sp.gov.br/fatec/defaultt.html");
+visitarPagina(historico, "www.stackoverflow.com");
 console.log("-----------------------------");
-listarFila(filaAtendimento);
+console.log(`Página atual: ${paginaAtual(historico)}`);
 console.log("-----------------------------");
+listarHistorico(historico);
+console.log("-----------------------------");
+voltarPagina(historico);
+console.log("-----------------------------");
+console.log(`Página atual após voltar: ${paginaAtual(historico)}`);
+console.log("-----------------------------");
+listarHistorico(historico);
 //# sourceMappingURL=atividade4.js.map
