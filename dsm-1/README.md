@@ -4,8 +4,8 @@ Página inicial do primeiro semestre representado neste arquivo acadêmico. Os m
 
 ## Disciplinas
 
-- [algoritimo](./algoritimo)
-- [desenvolvimento-web](./desenvolvimento-web)
+- [Algoritimo](./algoritimo)
+- [Desenvolvimento Web](./desenvolvimento-web)
 
 ## Conteúdos
 

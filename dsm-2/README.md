@@ -4,8 +4,8 @@ Página inicial do segundo semestre representado neste arquivo acadêmico. Os ma
 
 ## Disciplinas
 
-- [desenvolvimento web II](./desenvolvimento%20web%20%20II)
-- [tecnicas-de-programacao](./tecnicas-de-programacao)
+- [Desenvolvimento Web II](./desenvolvimento%20web%20%20II)
+- [Tecnicas de Programacao](./tecnicas-de-programacao)
 
 ## Conteúdos
 
