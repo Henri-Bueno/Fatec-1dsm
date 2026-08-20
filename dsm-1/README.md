@@ -20,4 +20,4 @@ Não foram identificadas notas acadêmicas individuais ou média final do semest
 | algoritimo | A definir |
 | desenvolvimento-web | A definir |
 
-[← Voltar para Fatec DSM](../README.md))
+[← Voltar para Fatec DSM](../README.md)
