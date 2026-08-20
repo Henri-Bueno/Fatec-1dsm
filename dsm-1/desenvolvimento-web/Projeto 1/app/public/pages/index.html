@@ -5,13 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.cps.sp.gov.br/favicon.ico" />
     <link rel="stylesheet" href="/assets/css/main.css"/>
-    <title>DSM |CEP</title> 
+    <title>Busca Fácil de CEP</title>
 </head>
 <body>
-    <main class="card">
-        <h1 class="title">Consultar CEPs de todo o Brasil</h1>
-        <input id="search-input" placeholder="Digite o CEP">
-        <section id="result" class="result"></section>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <main class="page-shell">
+        <header class="site-header">
+            <p class="eyebrow"><span></span> SISTEMA DE LOCALIZAÇÃO</p>
+            <h1>Busca Fácil de <strong>CEP</strong></h1>
+            <p class="subtitle">Localize seu endereço em segundos</p>
+        </header>
+
+        <section class="card" aria-labelledby="search-title">
+            <div class="card-heading">
+                <div>
+                    <p class="section-kicker">CONSULTA RÁPIDA</p>
+                    <h2 id="search-title">Encontre um endereço</h2>
+                </div>
+                <span class="status-dot" title="Serviço disponível"></span>
+            </div>
+
+            <form id="search-form" class="search-form">
+                <label class="search-field" for="search-input">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+                    <input id="search-input" inputmode="numeric" autocomplete="postal-code" placeholder="Digite o CEP (ex: 01001-000)" maxlength="9">
+                </label>
+                <button type="submit">Consultar <span aria-hidden="true">&#8594;</span></button>
+            </form>
+
+            <section id="result" class="result" aria-live="polite" aria-label="Resultado da consulta"></section>
+        </section>
+
+        <footer class="page-footer"><span></span> DADOS VIA VIACEP <span></span></footer>
     </main>
     <script src="/assets/js/main.js"></script>
 </body>

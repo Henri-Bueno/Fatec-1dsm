@@ -1,70 +1,119 @@
-/* @import é uma regra do CSS usada para carregar arquivos de estilo externos dentro de uma folha de estilos */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
 
 * {
     box-sizing: border-box;
 }
 
+:root {
+    --ink: #f4fbfa;
+    --muted: #82908f;
+    --dim: #536362;
+    --cyan: #01f9c1;
+    --blue: #00a3ff;
+    --line: rgba(151, 190, 187, 0.16);
+}
+
 body {
     margin: 0;
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  background-color: #f4f4f4;
-  justify-content: center;
-  align-items: self-start;
-  min-height: 100vh;
-  padding: 1.5rem;
+    font-family: "Manrope", sans-serif;
+    color: var(--ink);
+    background: #080d10;
+    min-height: 100vh;
+    padding: 56px 24px 32px;
+    overflow-x: hidden;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    max-width: 41.25rem;
-    background: #fff;
-    border-radius: 0.625rem;
-    padding: 2rem;
-    width: 100%;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
-    gap: 1rem;
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.28;
+    background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 42px 42px;
 }
 
-.title{
-    font-size: 1.5rem;
-    text-align: center;
+.ambient {
+    position: fixed;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.1;
+    pointer-events: none;
 }
 
-#search-input{
-   width: 100%;
-   padding: 0.65rem 0.75rem;
-   border-radius: 0.5rem;
-   border: 0.0625rem solid #cbd5e1;
-   font: inherit;
+.ambient-one { background: var(--cyan); top: -180px; left: -120px; }
+.ambient-two { background: var(--blue); right: -170px; bottom: -160px; }
+
+.page-shell {
+    width: min(100%, 860px);
+    margin: 0 auto;
+    position: relative;
 }
 
-.result{
-    min-height: 1.5rem;
-    border-radius: 0.5rem;
-    padding: 0.75rem;
-    font-size: 0.95rem;
-    line-height: 1.4rem;
+.site-header { margin-bottom: 36px; }
+.eyebrow, .section-kicker, .page-footer {
+    font-family: "DM Mono", monospace;
+    letter-spacing: 0.12em;
+    font-size: 0.68rem;
+    color: var(--cyan);
 }
+.eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 17px; }
+.eyebrow span, .page-footer span { width: 22px; height: 1px; background: var(--cyan); display: inline-block; }
+.site-header h1 { font-size: clamp(2.2rem, 5vw, 4.2rem); letter-spacing: -0.055em; line-height: 1.03; margin: 0; font-weight: 500; }
+.site-header h1 strong { color: var(--cyan); font-weight: 800; text-shadow: 0 0 24px rgba(1, 249, 193, 0.3); }
+.subtitle { color: var(--muted); margin: 14px 0 0; font-size: 1rem; }
 
-.result.error{
-    background-color: #fef2f2;
-    color: #991b1b;
+.card {
+    background: linear-gradient(135deg, rgba(28, 47, 48, 0.72), rgba(13, 23, 27, 0.84));
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: clamp(24px, 5vw, 48px);
+    box-shadow: 0 0 0 1px rgba(0, 163, 255, 0.03), 0 24px 70px rgba(0, 0, 0, 0.32), 0 0 32px rgba(1, 249, 193, 0.05);
+    backdrop-filter: blur(18px);
 }
+.card-heading { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px; }
+.section-kicker { color: var(--blue); margin: 0 0 8px; }
+.card h2 { font-size: 1.25rem; margin: 0; font-weight: 600; }
+.status-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 14px var(--cyan); margin-top: 8px; }
 
-.result.loading{
-    background-color: #eff6ef;
-    color: #1b4ed8;
-}
+.search-form { display: flex; gap: 12px; }
+.search-field { flex: 1; display: flex; align-items: center; gap: 13px; padding: 0 17px; min-height: 56px; background: rgba(4, 12, 15, 0.78); border: 1px solid rgba(1, 249, 193, 0.2); border-radius: 10px; transition: border-color 180ms, box-shadow 180ms; }
+.search-field:focus-within { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(1, 249, 193, 0.08), 0 0 22px rgba(1, 249, 193, 0.11); }
+.search-field svg { width: 20px; height: 20px; fill: none; stroke: var(--muted); stroke-linecap: round; stroke-width: 1.7; }
+#search-input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink); font: inherit; font-size: 0.9rem; }
+#search-input::placeholder { color: #687674; }
+button { min-width: 142px; border: 0; border-radius: 10px; color: #041411; background: var(--cyan); font: 700 0.86rem "Manrope", sans-serif; cursor: pointer; box-shadow: 0 0 24px rgba(1, 249, 193, 0.19); transition: transform 180ms, box-shadow 180ms, background 180ms; }
+button span { font-size: 1.2rem; margin-left: 8px; vertical-align: -1px; }
+button:hover { background: #54ffd9; box-shadow: 0 0 30px rgba(1, 249, 193, 0.35); transform: translateY(-2px); }
+button:active { transform: translateY(0); }
 
-.result.success{
-    background-color: #f1fafc;
-    color: #0f172a;
-    border: 0.0625rem solid #cbd5e1;
-}
+.result { margin-top: 28px; min-height: 24px; }
+.result:empty { display: none; }
+.result.success { padding: 25px; border: 1px solid rgba(151, 190, 187, 0.14); border-radius: 12px; background: rgba(7, 17, 20, 0.5); }
+.result.error, .result.loading { padding: 16px; border-radius: 10px; font-size: 0.86rem; }
+.result.error { color: #ff9a9a; border: 1px solid rgba(255, 100, 100, 0.23); background: rgba(80, 20, 28, 0.24); }
+.result.loading { color: var(--blue); border: 1px solid rgba(0, 163, 255, 0.23); background: rgba(0, 60, 90, 0.18); }
+.result-header { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding-bottom: 21px; border-bottom: 1px solid var(--line); }
+.result-label { margin: 0 0 7px; color: var(--muted); font: 0.68rem "DM Mono", monospace; letter-spacing: 0.12em; }
+.result-cep { margin: 0; color: var(--cyan); font: 500 clamp(1.5rem, 4vw, 2.2rem) "DM Mono", monospace; text-shadow: 0 0 18px rgba(1, 249, 193, 0.25); }
+.result-badge { color: var(--cyan); font: 0.66rem "DM Mono", monospace; border: 1px solid rgba(1, 249, 193, 0.25); padding: 6px 9px; border-radius: 5px; }
+.data-grid { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 36px; }
+.data-item { padding: 16px 0; border-bottom: 1px solid rgba(151, 190, 187, 0.1); min-width: 0; }
+.data-item dt { color: var(--muted); font-size: 0.72rem; margin-bottom: 6px; }
+.data-item dd { margin: 0; color: #dcd1b9; font-size: 0.9rem; overflow-wrap: anywhere; }
+.phone-label { display: flex; align-items: center; gap: 6px; }
+.phone-label svg { width: 13px; height: 13px; fill: none; stroke: var(--cyan); stroke-width: 1.7; stroke-linecap: round; }
+.page-footer { display: flex; justify-content: center; align-items: center; gap: 12px; color: var(--dim); margin-top: 30px; }
+.page-footer span { background: var(--dim); width: 30px; }
 
-.result p{
-    margin: 0.2rem 0;
+@media (max-width: 600px) {
+    body { padding: 32px 16px 24px; }
+    .site-header { margin-bottom: 27px; }
+    .search-form { flex-direction: column; }
+    button { min-height: 52px; }
+    .result-header { align-items: flex-start; flex-direction: column; gap: 12px; }
+    .data-grid { column-gap: 18px; }
+    .data-item dd { font-size: 0.8rem; }
 }
