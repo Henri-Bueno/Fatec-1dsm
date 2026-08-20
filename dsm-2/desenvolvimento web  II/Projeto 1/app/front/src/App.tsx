@@ -11,9 +11,16 @@ export default function App() {
 
 
   return (
-    <main>
+    <main className="app-shell">
+      <div className="rgb-card">
+        <header className="app-header">
+          
+          <h1>Seletor <span className="rgb-title"><span>R</span><span>G</span><span>B</span></span></h1>
+          <p className="subtitle">Ajuste os canais para criar sua cor perfeita.</p>
+        </header>
       <Input red = {red} green = {green} blue = {blue} setRed = {setRed} setGreen = {setGreen} setBlue = {setBlue} /> 
       <Output r={red} g={green} b={blue} />
+      </div>
     </main>
   );
 }
