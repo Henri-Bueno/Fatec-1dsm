@@ -5,11 +5,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 function cadastro(w) {
     console.log(w);
 }
-const meuObj = {
-    d: "teste",
-    a: 21,
-    b: 21,
-    c: 54
-};
-cadastro(meuObj);
+cadastro({ a: 2, b: 2, c: 4, d: "teste" });
 //# sourceMappingURL=atividade4.js.map

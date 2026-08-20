@@ -11,12 +11,10 @@ function cadastrarProfessor(professor: Professor) {
     console.log(professor);
 }
 
-cadastrarProfessor({nome: "Vitor Octavius", matricula: 5455, disciplina: "Matemática"});
+cadastrarProfessor({nome: "Arley", matricula: 29, disciplina: "aquela la"});
 
-const professor2: Professor = {
-    nome: "Vitor Reis", 
-    matricula: 5246, 
-    disciplina: "Estrutura de Dados"
-}
 
-cadastrarProfessor(professor2);
+
+
+
+

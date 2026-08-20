@@ -8,18 +8,9 @@ interface Y {
 };
 
 
-interface Z {dado:X|Y};
+interface Z extends X, Y{}
+
 
 function print(w: Z & { d: string }) {
     console.log(w);
 }
-
-const meuObj: Z & {d:string} = {
-    d: "teste",
-    dado: {
-        a:18,
-        b:14
-    }
-}
-
-print(meuObj)
