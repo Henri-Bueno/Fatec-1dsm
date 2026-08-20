@@ -2,7 +2,7 @@
 
 ## Visão geral
 
-Projeto acadêmico desenvolvido durante a disciplina de Desenvolvimento Web. A aplicação apresenta os 17 Objetivos de Desenvolvimento Sustentável da ONU em uma interface informativa.
+Projeto acadêmico desenvolvido durante a disciplina de Desenvolvimento Web. A aplicação apresenta os 17 Objetivos de Desenvolvimento Sustentável da ONU em uma interface informativa e responsiva.
 
 ## Funcionalidades
 
