@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 20rem;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(211, 100%, 90%);
+  color: rgb(41, 47, 61)
+}
+
+button, input {
+  font: inherit;
+}
+
+.container {
+  width: min(100% - 2rem, 40rem);
+  margin-inline: auto;
+  padding-block: 3rem ;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(14, 19, 31, 0.1);
+  background-color: rgb(255, 255, 255);
+  gap: 0.4rem;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.formField label {
+  font-weight: 700;
+}
+
+.formField input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #94a3b8;
+  border-radius: 0.4rem;
+}
+
+.formField input:focus {
+  border-color: rgb(130, 209, 255);
+  outline: 2px solid #94a3b8;
+}
+
+.add-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background-color: rgb(145, 145, 255);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.empity-message {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.person-list {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.person-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-left: 0.25rem solid #85b8ff;
+  border-radius: 0.4rem;
+  background-color: aliceblue;
+}
+
+.person-data {
+  display: flex;
+  flex-direction: column;
+  gap:0.25rem;
+}
+
+.remove-button {
+  align-self: center;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background-color: rgb(219, 79, 107);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: crimson;
+}
+
+.remove-button:focus-visible {
+  outline: 3px solid #fecafe;
+  outline-offset: 2px;
+}
