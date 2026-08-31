@@ -2,6 +2,7 @@ type OutputProps = {
   r: number;
   g: number;
   b: number;
+  onSaveColor: () => void;
 };
 
 export default function Output(props: OutputProps) {
@@ -20,6 +21,9 @@ export default function Output(props: OutputProps) {
       <article className="color-output" style={{ backgroundColor: rgb }}>
         <p style={{ color: inverseColor }}>RGB</p>
       </article>
+      <button className="save-color-btn" onClick={props.onSaveColor}>
+         Salvar
+      </button>
     </section>
   );
 }
