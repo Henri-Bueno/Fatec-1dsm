@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { weatherContext } from "../contexts/WeatherContext";
 import { searchCities, getForecast } from "../services/weatherService";
-import type { City } from "../types/weather";
+import type { City, Forecast } from "../types/weather";
 
 interface WeatherProviderProps {
   children: ReactNode;
@@ -10,6 +10,8 @@ interface WeatherProviderProps {
 export default function WeatherProvider({ children }: WeatherProviderProps) {
   const [cities, setCities] = useState<City[]>([]);
   const [cityLoading, setCityLoading] = useState(false);
+  const [foreCast, setForeCast] = useState<Forecast | null>(null)
+  const [foreCastLoading, setForeCastLoading] = useState(false);
 
   async function findCities(name: string) {
     try {
@@ -25,10 +27,13 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
 
   async function cityForecast(id: number) {
     try {
+      setForeCastLoading(true);
       const lista = await getForecast(id);
-      console.log(lista);
+      setForeCast(lista)
     } catch (e: any) {
       console.log(e.message);
+    }finally {
+      setForeCastLoading(false);
     }
   }
 
@@ -40,6 +45,8 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
         setCityLoading,
         findCities,
         cityForecast,
+        foreCast,
+        foreCastLoading
       }}
     >
       {children}

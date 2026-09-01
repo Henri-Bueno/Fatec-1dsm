@@ -1,10 +1,11 @@
 import { useState, type KeyboardEvent } from "react";
 import useWeather from "../hooks/useWeather";
+import ForecastCard from "./ForeCastCard";
 
 export default function WeatherSearch() {
   const [cityName, setCityName] = useState("");
 
-  const { cities, findCities, cityLoading, cityForecast } = useWeather();
+  const { cities, findCities, cityLoading, cityForecast, foreCast } = useWeather();
 
   async function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter") {
@@ -42,6 +43,7 @@ export default function WeatherSearch() {
           );
         })}
       </div>
+      { foreCast && <ForecastCard/>}
     </>
   );
 }
