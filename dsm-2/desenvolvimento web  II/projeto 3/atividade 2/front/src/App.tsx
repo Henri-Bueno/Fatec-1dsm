@@ -1,0 +1,10 @@
+import WeatherSearch from "./components/WeatherSearch";
+import WeatherProvider from "./providers/WeatherProvider";
+
+export default function App() {
+  return (
+    <WeatherProvider>
+      <WeatherSearch />
+    </WeatherProvider>
+  );
+}
