@@ -11,6 +11,7 @@ Semestres com conteúdo disponível:
 
 A organização segue a estrutura:
 
+
 ```text
 Fatec-DSM
 |-- semestre
